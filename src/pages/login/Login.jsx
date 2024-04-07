@@ -1,57 +1,78 @@
-import { NavLink,useNavigate ,useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../../component/navbar/Navbar";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../hooks/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import ForgotModals from "../../component/forgotModal/ForgotModals";
 const Login = () => {
-  const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn, emailPassSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const form = location?.state || "/"
-  
+  const form = location?.state || "/";
+
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(() => navigate(form))
       .catch((error) => console.log(error));
   };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    emailPassSignIn(email, password)
+      .then(() => navigate(form))
+      .catch((error) => console.log(error));
+  };
 
   return (
-    <div className="max-w-[1550px] w-[95%] md:w-[90%] mx-auto">\
-    <Helmet>
+    <div className="max-w-[1550px] w-[95%] md:w-[90%] mx-auto">
+      <Helmet>
         <title>Login</title>
       </Helmet>
       <nav className="md:pt-4">
         <Navbar color={"black"} />
       </nav>
       <div className="flex flex-col justify-center items-center py-6 md:py-12 space-y-4">
-        <form className="flex flex-col border-2 border-[#ABABAB] rounded-lg p-8 md:min-w-[570px] space-y-5">
+        <form
+          onSubmit={(e) => handleLogin(e)}
+          className="flex flex-col border-2 border-[#ABABAB] rounded-lg p-8 md:min-w-[570px] space-y-5"
+        >
           <p className="font-bold text-2xl">Login</p>
           <label>
             <input
               type="email"
+              name="email"
               placeholder="Username or Email"
               className="outline-none border-b-2 border-[#C5C5C5] py-2 w-full"
+              required
             />
           </label>
           <label>
             <input
               type="password"
+              name="password"
               placeholder="Password"
+              minLength={6}
               className="outline-none border-b-2 border-[#C5C5C5] py-2 w-full"
+              required
             />
           </label>
           <div className="flex justify-between">
             <p className="flex items-center gap-2">
-              <input type="checkbox" className="checkbox checkbox-warning" />
+              <input
+                type="checkbox"
+                className="checkbox checkbox-warning"
+                name="check"
+                required
+              />
               <label>Remember Me</label>
             </p>
-            <NavLink className="text-[#F9A51A] underline">
-              Forgot Password
-            </NavLink>
           </div>
-          <button className="bg-[#F9A51A] py-3 btn">Login</button>
+          <button type="submit" className="bg-[#F9A51A] py-3 btn">
+            Login
+          </button>
           <div className="text-center">
             Dont have an account?
             <NavLink to="/register" className="text-[#F9A51A]">
@@ -60,6 +81,7 @@ const Login = () => {
             </NavLink>
           </div>
         </form>
+        {<ForgotModals />}
         <div className="flex justify-center items-center gap-2">
           <p className="h-[1px] bg-[#AAA] md:w-[200px]"></p>
           <p>Or</p>
