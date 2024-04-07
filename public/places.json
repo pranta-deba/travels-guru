@@ -1,0 +1,44 @@
+[
+  {
+    "id": 7,
+    "place_name": "Rangamati",
+    "description": "Rangamati is a hill district known for its serene lakes, lush hills, indigenous communities, and vibrant tribal culture.",
+    "image": "https://i.postimg.cc/Tw1HbDqh/photo-1697560000533-02df4c5a1a47.avif"
+  },
+  {
+    "id": 1,
+    "place_name": "Sundarbans",
+    "description": "The Sundarbans is the largest mangrove forest in the world, renowned for its biodiversity including the Bengal tiger and various bird species.",
+    "image": "https://i.postimg.cc/FKWK1hRw/photo-1549300461-11c5b94e8855.avif"
+  },
+  {
+    "id": 2,
+    "place_name": "Cox's Bazar",
+    "description": "Cox's Bazar is famous for having the world's longest natural sandy sea beach, stretching over 120 kilometers along the Bay of Bengal.",
+    "image": "https://i.postimg.cc/qM5Qc3F7/photo-1608958435020-e8a7109ba809.avif"
+  },
+  {
+    "id": 3,
+    "place_name": "Sajek Valley",
+    "description": "Sajek Valley is a picturesque hill station located in the Chittagong Hill Tracts, offering stunning panoramic views and serene landscapes.",
+    "image": "https://i.postimg.cc/gjByKCN7/photo-1578128178075-a7fbe741fcf7.avif"
+  },
+  {
+    "id": 4,
+    "place_name": "Ratargul",
+    "description": "Ratargul Swamp Forest is a freshwater swamp forest located in Sylhet, known for its vibrant greenery, boat rides, and diverse wildlife.",
+    "image": "https://i.postimg.cc/HxnVtVRp/photo-1506610677791-f5f690d1f472.avif"
+  },
+  {
+    "id": 5,
+    "place_name": "Saint Martin",
+    "description": "Saint Martin's Island is a coral island in the Bay of Bengal, renowned for its crystal-clear waters, coral reefs, and diverse marine life.",
+    "image": "https://i.postimg.cc/4d8RkGwH/photo-1544550581-1bcabf842b77.avif"
+  },
+  {
+    "id": 6,
+    "place_name": "Sonargaon",
+    "description": "Sonargaon, also known as the 'Golden City,' is a historic town near Dhaka, featuring ancient ruins, museums, and traditional architecture.",
+    "image": "https://i.postimg.cc/X7Cmx9MC/photo-1603293000399-9d6a8fdbe44e.avif"
+  }
+]
